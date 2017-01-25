@@ -6,28 +6,30 @@
 #define REPEAT_DELAY 1000
 
 
-bool isHigh = false;
+bool isDepressed = false;
 
 
 void handleInput() {
-    Serial.println('Handled!');
+    digitalWrite(LED_BUILTIN, HIGH);
     delay(REPEAT_DELAY);
+    digitalWrite(LED_BUILTIN, LOW);
 }
 
 
 void setup() {
     pinMode(READ_PIN, INPUT_PULLUP);
+    pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(9600);
 }
 
 
 void loop() {
-    if (digitalRead(READ_PIN) == HIGH && !isHigh) {
-        isHigh = true;
+    if (digitalRead(READ_PIN) == LOW && !isDepressed) {
+        isDepressed = true;
         handleInput();
     }
 
-    if (digitalRead(READ_PIN) == LOW && isHigh) {
-        isHigh = false;
+    else if (digitalRead(READ_PIN) == HIGH && isDepressed) {
+        isDepressed = false;
     }
 }
