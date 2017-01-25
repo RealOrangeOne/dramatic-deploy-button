@@ -1,0 +1,8 @@
+dependencies:
+    pre:
+        - sudo apt-get install arduino arduino-core arduino-mk
+        - sudo pip install https://github.com/scottdarch/Arturo
+
+test:
+    override:
+        - ano build
