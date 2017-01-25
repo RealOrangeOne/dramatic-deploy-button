@@ -27,3 +27,9 @@
 *.exe
 *.out
 *.app
+
+
+# Arturo
+.build_ano/
+lib/
+
