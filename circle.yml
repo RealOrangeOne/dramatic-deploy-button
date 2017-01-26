@@ -5,4 +5,5 @@ dependencies:
 
 test:
     override:
-        - ano build
+        - ano build -m uno -v
+        - ano build -m micro -v
