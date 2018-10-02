@@ -10,4 +10,4 @@ jobs:
           command: git submodule sync && git submodule update --init
       - run:
           name: Build Sketch
-          command: arduino-builder -hardware ${ARDUINO_HARDWARE} -tools ${ARDUINO_TOOLS}/avr -tools ${ARDUINO_TOOLS_BUILDER} -libraries ${ARDUINO_LIBS} -fqbn arduino:avr:uno src/main.cpp
+          command: arduino-builder -hardware ${ARDUINO_HARDWARE} -tools ${ARDUINO_TOOLS}/avr -tools ${ARDUINO_TOOLS_BUILDER} -libraries ${ARDUINO_LIBS} -fqbn arduino:avr:micro src/main.cpp
